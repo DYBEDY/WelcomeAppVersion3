@@ -20,19 +20,37 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        applyGradientForBackground()
+        
         welcomeTextLabel.text = welcomeText
         
         emojiLabel.text = "\u{1f44b}"
         
     }
     
-  
-    @IBAction func logOutAction() {
+    @IBAction func logOutButton() {
         dismiss(animated: true)
-        
+    }
+}
+    
+// MARK: - gradient method
+
+extension WelcomeViewController {
+    
+    func applyGradientForBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor.systemBlue.cgColor,
+            UIColor.white.cgColor
+        ]
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    
-    
-    
 }
+
+    
+    
+    
+    
+

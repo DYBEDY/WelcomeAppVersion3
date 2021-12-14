@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -14,17 +16,26 @@ class LoginViewController: UIViewController {
     let login = "Champion"
     let password = "qwerty"
     
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        applyGradientForBackground()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeScreen = segue.destination as! WelcomeViewController
-        welcomeScreen.welcomeText = "Welcome, \(userNameTextField.text ?? " ") !" 
+        welcomeScreen.welcomeText = "Welcome, \(userNameTextField.text ?? " ") !"
     }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        let _ = segue.source as! WelcomeViewController
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+        
+    }
 
 
     @IBAction func loginButton() {
@@ -36,13 +47,15 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func recoverNameButton() {
-        showAlert(title: "Ooops!", message: "Your name is \(login) \u{1F448} ")
+        showAlert(title: "Ooops!", message: "Your name is \"\(login)\" \u{1F448} ")
     }
     
     
     @IBAction func recoverPasswordButton() {
-        showAlert(title: "Ooops!", message: "Your password is \(password) \u{1F448} ")
+        showAlert(title: "Ooops!", message: "Your password is \" \(password)\" \u{1F448} ")
     }
+    
+ 
     
 }
     // MARK: - private methods
@@ -61,6 +74,29 @@ extension LoginViewController {
     
 }
         
+// MARK: - gradient method
+
+extension LoginViewController {
+    
+    func applyGradientForBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor.systemBlue.cgColor,
+            UIColor.white.cgColor
+        ]
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+
     
 
 
