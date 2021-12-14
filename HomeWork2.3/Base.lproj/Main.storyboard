@@ -55,6 +55,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?"/>
+                                        <connections>
+                                            <action selector="recoverNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMh-QG-v0J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="669-qf-Jb9">
                                         <rect key="frame" x="187.5" y="0.0" width="149.5" height="31"/>
@@ -63,6 +66,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                        <connections>
+                                            <action selector="recoverPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nki-gs-kf3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
