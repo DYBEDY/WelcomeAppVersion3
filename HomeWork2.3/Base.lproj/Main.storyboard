@@ -41,6 +41,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
+                                    <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gud-Gh-cSe"/>
                                     <segue destination="ORT-Ws-JWe" kind="presentation" id="Tlp-z2-PtB"/>
                                 </connections>
                             </button>
@@ -82,6 +83,10 @@
                             <constraint firstItem="3ve-8u-Rke" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="uBX-dx-x2B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="lEK-kx-AHp" id="ubS-Re-rCc"/>
+                        <outlet property="userNameTextField" destination="WVs-2U-lRi" id="3Qn-Pm-lPD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,28 +115,37 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logOutAction" destination="ORT-Ws-JWe" eventType="touchUpInside" id="qR0-O2-bC7"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDk-hA-3QE">
-                                <rect key="frame" x="147" y="171" width="120" height="120"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCz-o8-Fql">
+                                <rect key="frame" x="157" y="176" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="YMB-BA-lgo"/>
-                                    <constraint firstAttribute="width" constant="120" id="nXq-ih-0xX"/>
+                                    <constraint firstAttribute="height" constant="100" id="QJK-tb-omd"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="sx3-jQ-3x4"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0zw-u7-qdH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aDk-hA-3QE" firstAttribute="top" secondItem="xDA-K2-acq" secondAttribute="bottom" constant="58.5" id="9Zw-KB-HjW"/>
                             <constraint firstItem="0zw-u7-qdH" firstAttribute="trailing" secondItem="xDA-K2-acq" secondAttribute="trailing" constant="53" id="Iwb-tJ-U9X"/>
+                            <constraint firstItem="nCz-o8-Fql" firstAttribute="top" secondItem="xDA-K2-acq" secondAttribute="bottom" constant="63.5" id="SqV-nq-M6n"/>
                             <constraint firstItem="3GQ-8d-hnl" firstAttribute="centerX" secondItem="r0C-X7-QW5" secondAttribute="centerX" id="Tcq-VB-jMg"/>
                             <constraint firstItem="0zw-u7-qdH" firstAttribute="bottom" secondItem="3GQ-8d-hnl" secondAttribute="bottom" constant="136" id="WYD-9s-zkc"/>
-                            <constraint firstItem="aDk-hA-3QE" firstAttribute="centerX" secondItem="r0C-X7-QW5" secondAttribute="centerX" id="mMT-cP-DAI"/>
                             <constraint firstItem="xDA-K2-acq" firstAttribute="leading" secondItem="0zw-u7-qdH" secondAttribute="leading" constant="53" id="pfY-bd-THP"/>
+                            <constraint firstItem="nCz-o8-Fql" firstAttribute="centerX" secondItem="r0C-X7-QW5" secondAttribute="centerX" id="qmg-bh-aSV"/>
                             <constraint firstItem="xDA-K2-acq" firstAttribute="top" secondItem="0zw-u7-qdH" secondAttribute="top" constant="92" id="wCS-tL-PuG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emojiLabel" destination="nCz-o8-Fql" id="Nyo-WQ-WSV"/>
+                        <outlet property="welcomeTextLabel" destination="xDA-K2-acq" id="zoJ-rg-P04"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXU-kS-tkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
