@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     let login = "Champion"
     let password = "qwerty"
     
-    var keyName: UIReturnKeyType = .next
+    //    var keyName: UIReturnKeyType = .next
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +23,14 @@ class LoginViewController: UIViewController {
         
         userNameTextField.delegate = self
         passwordTextField.delegate = self
- 
+        
+        userNameTextField.returnKeyType = .next
+        passwordTextField.returnKeyType = .done
+        
         
         userNameTextField.tag = 0
         passwordTextField.tag = 1
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,8 +44,8 @@ class LoginViewController: UIViewController {
         passwordTextField.text = nil
         
     }
-
-
+    
+    
     @IBAction func loginButton() {
         guard (userNameTextField.text, passwordTextField.text) == (login, password) else {
             showAlert(title: "Ooops!", message: "Try again")
@@ -60,11 +63,8 @@ class LoginViewController: UIViewController {
     @IBAction func recoverPasswordButton() {
         showAlert(title: "Ooops!", message: "Your password is \" \(password)\" \u{1F448} ")
     }
-    
- 
-    
 }
-    // MARK: - Alert method
+// MARK: - Alert method
 extension LoginViewController {
     
     private func showAlert(title: String, message: String) {
@@ -91,7 +91,7 @@ extension LoginViewController {
     }
     
 }
-        
+
 // MARK: - Gradient method
 
 extension LoginViewController {
@@ -110,34 +110,27 @@ extension LoginViewController {
 // MARK: - Keyboard
 
 extension LoginViewController: UITextFieldDelegate {
-override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    view.endEditing(true)
-    super.touchesBegan(touches , with:event)
-}
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches , with:event)
+    }
     
-   
-//    func buttonsOfKeyboard() {
-//        if let password = passwordTextField.text {
-//            if password.isEmpty {
-//                passwordTextField.returnKeyType = .done
-//            } else {
-//                passwordTextField.returnKeyType = .done
-//            }
-//        }
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
-
+        
         if let nextResponder = textField.superview?.viewWithTag(nextTag) {
             nextResponder.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
+        
         return true
     }
     
 }
+    
+
     
 
 

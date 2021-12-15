@@ -45,8 +45,8 @@
                                     <color key="titleColor" red="0.078222802080000001" green="0.2024902421" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gud-Gh-cSe"/>
-                                    <segue destination="ORT-Ws-JWe" kind="presentation" modalPresentationStyle="fullScreen" id="Tlp-z2-PtB"/>
+                                    <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="nNy-Tt-VLx"/>
+                                    <segue destination="ORT-Ws-JWe" kind="presentation" id="G6U-cB-N1r"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="21y-Je-nQ2">
@@ -62,7 +62,7 @@
                                             <color key="titleColor" red="0.078222802080000001" green="0.2024902421" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="recoverNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMh-QG-v0J"/>
+                                            <action selector="recoverNameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sef-b3-Td6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="669-qf-Jb9">
@@ -75,7 +75,7 @@
                                             <color key="titleColor" red="0.078222802080000001" green="0.2024902421" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="recoverPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nki-gs-kf3"/>
+                                            <action selector="recoverPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdI-zG-W1b"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -95,8 +95,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordTextField" destination="lEK-kx-AHp" id="ubS-Re-rCc"/>
-                        <outlet property="userNameTextField" destination="WVs-2U-lRi" id="3Qn-Pm-lPD"/>
+                        <outlet property="passwordTextField" destination="lEK-kx-AHp" id="7P0-9h-tpf"/>
+                        <outlet property="userNameTextField" destination="WVs-2U-lRi" id="4vl-ed-IR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,17 +108,17 @@
             <objects>
                 <viewController id="ORT-Ws-JWe" customClass="WelcomeViewController" customModule="HomeWork2_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r0C-X7-QW5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDA-K2-acq">
-                                <rect key="frame" x="53" y="136" width="308" height="24"/>
+                                <rect key="frame" x="53" y="92" width="308" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.078222802080000001" green="0.2024902421" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GQ-8d-hnl">
-                                <rect key="frame" x="160" y="691" width="94" height="35"/>
+                                <rect key="frame" x="160" y="637" width="94" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="3yk-TC-fpu"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="94" id="EXn-Ag-5Xh"/>
@@ -129,12 +129,11 @@
                                     <color key="titleColor" red="0.078222802080000001" green="0.2024902421" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOutButton" destination="ORT-Ws-JWe" eventType="touchUpInside" id="oiJ-qv-qH1"/>
-                                    <segue destination="dqu-mR-nIY" kind="unwind" unwindAction="unwindFor:" id="Rgh-KZ-C2T"/>
+                                    <action selector="logOutButton" destination="ORT-Ws-JWe" eventType="touchUpInside" id="sdJ-3v-EsU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCz-o8-Fql">
-                                <rect key="frame" x="137.5" y="216" width="139.5" height="120"/>
+                                <rect key="frame" x="137.5" y="172" width="139.5" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="9Hv-py-9Mb"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="IZW-wP-vnb"/>
@@ -156,13 +155,13 @@
                             <constraint firstItem="xDA-K2-acq" firstAttribute="top" secondItem="0zw-u7-qdH" secondAttribute="top" constant="92" id="wCS-tL-PuG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cl4-Vs-2ST"/>
                     <connections>
-                        <outlet property="emojiLabel" destination="nCz-o8-Fql" id="Nyo-WQ-WSV"/>
-                        <outlet property="welcomeTextLabel" destination="xDA-K2-acq" id="zoJ-rg-P04"/>
+                        <outlet property="emojiLabel" destination="nCz-o8-Fql" id="VZt-y9-TBy"/>
+                        <outlet property="welcomeTextLabel" destination="xDA-K2-acq" id="GVW-wJ-pZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXU-kS-tkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="dqu-mR-nIY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="740.57971014492762" y="69.642857142857139"/>
         </scene>
