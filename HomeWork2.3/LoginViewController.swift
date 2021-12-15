@@ -121,11 +121,13 @@ extension LoginViewController: UITextFieldDelegate {
         
         if let nextResponder = textField.superview?.viewWithTag(nextTag) {
             nextResponder.becomeFirstResponder()
+
         } else {
             textField.resignFirstResponder()
+            loginButton()
         }
         
-        return true
+        return false
     }
     
 }
