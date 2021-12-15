@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -16,14 +14,20 @@ class LoginViewController: UIViewController {
     let login = "Champion"
     let password = "qwerty"
     
-    
+    var keyName: UIReturnKeyType = .next
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         applyGradientForBackground()
         
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+ 
         
+        userNameTextField.tag = 0
+        passwordTextField.tag = 1
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,12 +109,37 @@ extension LoginViewController {
 
 // MARK: - Keyboard
 
-extension LoginViewController {
+extension LoginViewController: UITextFieldDelegate {
 override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     view.endEditing(true)
     super.touchesBegan(touches , with:event)
 }
+    
+   
+//    func buttonsOfKeyboard() {
+//        if let password = passwordTextField.text {
+//            if password.isEmpty {
+//                passwordTextField.returnKeyType = .done
+//            } else {
+//                passwordTextField.returnKeyType = .done
+//            }
+//        }
+//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+
+        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
 }
+    
+
 
     
     
