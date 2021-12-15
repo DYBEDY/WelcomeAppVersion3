@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
         
         applyGradientForBackground()
         
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,8 +42,8 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton() {
         guard (userNameTextField.text, passwordTextField.text) == (login, password) else {
             showAlert(title: "Ooops!", message: "Try again")
-            userNameTextField.text = ""
-            passwordTextField.text = ""
+            userNameTextField.text = nil
+            passwordTextField.text = nil
             return
         }
     }
@@ -59,7 +60,7 @@ class LoginViewController: UIViewController {
  
     
 }
-    // MARK: - private methods
+    // MARK: - Alert method
 extension LoginViewController {
     
     private func showAlert(title: String, message: String) {
@@ -80,9 +81,6 @@ extension LoginViewController {
                 }
             }
             
-            
-//            self.userNameTextField.text = ""
-//            self.passwordTextField.text = ""
         }
         alert.addAction(alertAction)
         present(alert, animated: true)
@@ -90,7 +88,7 @@ extension LoginViewController {
     
 }
         
-// MARK: - gradient method
+// MARK: - Gradient method
 
 extension LoginViewController {
     
@@ -103,14 +101,21 @@ extension LoginViewController {
         ]
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    
-    
-    
-    
-    
-    
 }
 
+// MARK: - Keyboard
+
+extension LoginViewController {
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    view.endEditing(true)
+    super.touchesBegan(touches , with:event)
+}
+}
+
+    
+    
+    
+    
 
 
     

@@ -33,7 +33,7 @@ class WelcomeViewController: UIViewController {
     }
 }
     
-// MARK: - gradient method
+// MARK: - Gradient method
 
 extension WelcomeViewController {
     
