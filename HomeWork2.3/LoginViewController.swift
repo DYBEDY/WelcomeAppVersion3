@@ -28,8 +28,6 @@ class LoginViewController: UIViewController {
         passwordTextField.returnKeyType = .done
         
         
-        userNameTextField.tag = 0
-        passwordTextField.tag = 1
         
     }
     
