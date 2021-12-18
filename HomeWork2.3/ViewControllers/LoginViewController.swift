@@ -11,8 +11,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    let login = "Champion"
-    let password = "qwerty"
+    let login = "1"
+    let password = "1"
     
     //    var keyName: UIReturnKeyType = .next
     
@@ -32,10 +32,14 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeScreen = segue.destination as? WelcomeViewController else { return }
-        welcomeScreen.welcomeText = login
+        let tabBarController = segue.destination as! UITabBarController
+        guard  let viewControllers = tabBarController.viewControllers else { return }
+        for controller in viewControllers {
+            if let welcomeScreen = controller as? WelcomeViewController {
+                welcomeScreen.welcomeText = login
+            }
     }
-    
+    }
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         let _ = segue.source as! WelcomeViewController
         userNameTextField.text = nil
