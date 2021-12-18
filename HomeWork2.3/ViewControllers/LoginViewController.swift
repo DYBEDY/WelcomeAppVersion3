@@ -32,8 +32,8 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeScreen = segue.destination as! WelcomeViewController
-        welcomeScreen.welcomeText = "Welcome, \(userNameTextField.text ?? " ") !"
+        guard let welcomeScreen = segue.destination as? WelcomeViewController else { return }
+        welcomeScreen.welcomeText = login
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -115,16 +115,12 @@ extension LoginViewController: UITextFieldDelegate {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let nextTag = textField.tag + 1
-        
-        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
-            nextResponder.becomeFirstResponder()
-
+        if textField == userNameTextField {
+            passwordTextField.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
             loginButton()
+            performSegue(withIdentifier: "ShowWelcomeVC", sender: nil)
         }
-        
         return false
     }
     

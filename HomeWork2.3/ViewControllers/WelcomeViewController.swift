@@ -12,7 +12,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var emojiLabel: UILabel!
     
     
-    var welcomeText: String!
+    var welcomeText = ""
     
     
     
@@ -22,7 +22,7 @@ class WelcomeViewController: UIViewController {
         
         applyGradientForBackground()
         
-        welcomeTextLabel.text = welcomeText
+        welcomeTextLabel.text = ("Welcome, \(welcomeText) !")
         
         emojiLabel.text = "\u{1f44b}"
         

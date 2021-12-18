@@ -46,7 +46,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="nNy-Tt-VLx"/>
-                                    <segue destination="ORT-Ws-JWe" kind="presentation" id="G6U-cB-N1r"/>
+                                    <segue destination="ORT-Ws-JWe" kind="presentation" identifier="ShowWelcomeVC" id="G6U-cB-N1r"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="21y-Je-nQ2">
