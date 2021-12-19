@@ -47,7 +47,7 @@ extension ResultViewController {
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor.darkGray.cgColor,
-            UIColor.white.cgColor,
+            UIColor.gray.cgColor,
             UIColor.white.cgColor
         ]
         view.layer.insertSublayer(gradientLayer, at: 0)
