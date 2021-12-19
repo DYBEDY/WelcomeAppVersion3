@@ -11,8 +11,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    let login = "1"
-    let password = "1"
+    let user = UserInfo.getInfo()
+    
     
     //    var keyName: UIReturnKeyType = .next
     
@@ -36,10 +36,18 @@ class LoginViewController: UIViewController {
         guard  let viewControllers = tabBarController.viewControllers else { return }
         for controller in viewControllers {
             if let welcomeScreen = controller as? WelcomeViewController {
-                welcomeScreen.welcomeText = login
+                welcomeScreen.welcomeText = user.person.name
+                
+            } else if let navigationVC = controller as? UINavigationController {
+                let infoVC = navigationVC.topViewController as! InfoViewController
+                infoVC.title = user.person.name
+                UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.lightGray]
+                UINavigationBar.appearance().tintColor = UIColor.lightGray
+                
+            }
             }
     }
-    }
+    
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         let _ = segue.source as! WelcomeViewController
         userNameTextField.text = nil
@@ -49,7 +57,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButton() {
-        guard (userNameTextField.text, passwordTextField.text) == (login, password) else {
+        guard (userNameTextField.text, passwordTextField.text) == (user.login, user.password) else {
             showAlert(title: "Ooops!", message: "Try again")
             userNameTextField.text = nil
             passwordTextField.text = nil
@@ -58,12 +66,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func recoverNameButton() {
-        showAlert(title: "Ooops!", message: "Your name is \"\(login)\" \u{1F448} ")
+        showAlert(title: "Ooops!", message: "Your name is \"\(user.login)\" \u{1F448} ")
     }
     
     
     @IBAction func recoverPasswordButton() {
-        showAlert(title: "Ooops!", message: "Your password is \" \(password)\" \u{1F448} ")
+        showAlert(title: "Ooops!", message: "Your password is \" \(user.password)\" \u{1F448} ")
     }
 }
 // MARK: - Alert method
