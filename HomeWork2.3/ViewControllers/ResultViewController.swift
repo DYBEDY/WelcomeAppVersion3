@@ -14,6 +14,8 @@ class ResultViewController: UIViewController {
     @IBOutlet var fourthFactLabel: UILabel!
     @IBOutlet var fifthFactLabel: UILabel!
     
+    var user: UserInfo!
+   
     var firstFact = ""
     var secondFact = ""
     var thirdFact = ""
@@ -29,11 +31,11 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         applyGradientForBackground()
         
-        firstFactLabel.text = firstFact
-        secondFactLabel.text = secondFact
-        thirdFactLabel.text = thirdFact
-        fourthFactLabel.text = fourthFact
-        fifthFactLabel.text = fifthFact
+        firstFactLabel.text = user.person.firstFact
+        secondFactLabel.text = user.person.secondFact
+        thirdFactLabel.text = user.person.thirdFact
+        fourthFactLabel.text = user.person.fourthFact
+        fifthFactLabel.text = user.person.fifthFact
     }
 }
 

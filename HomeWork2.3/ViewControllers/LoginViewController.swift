@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
                 
             } else if let navigationVC = controller as? UINavigationController {
                 let infoVC = navigationVC.topViewController as! InfoViewController
-                infoVC.title = user.person.name
+                infoVC.user = user
                 UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.lightGray]
                 UINavigationBar.appearance().tintColor = UIColor.lightGray
                 

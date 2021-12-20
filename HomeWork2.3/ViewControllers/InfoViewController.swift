@@ -11,20 +11,18 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
-    let user = UserInfo.getInfo()
-
+    var user: UserInfo!
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         applyGradientForBackground()
+        
 }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        if let resultVC = segue.destination as? ResultViewController {
-           resultVC.firstFact = user.person.firstFact
-           resultVC.secondFact = user.person.secondFact
-           resultVC.thirdFact = user.person.thirdFact
-           resultVC.fourthFact = user.person.fourthFact
-           resultVC.fifthFact = user.person.fifthFact
+           resultVC.user = user
        }
     }
    
